@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <title>سلة التسوق - الفراعنة</title>
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+<body>
+    <header class="header">
+        <!-- اللوجو والعنوان -->
+        <div class="logo-container">
+            <img src="./imgs/logo.png" alt="لوجو الفراعنة ستورز" class="logo-img">
+            <h1 class="logo-text">الفراعنة <span>ستورز</span></h1>
+        </div>
+    
+        <!-- شريط التنقل الجديد -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="./index.html">الرئيسية</a></li>
+                <li><a href="./categories/women.html">الحريمي</a></li>
+                <li><a href="./categories/kids.html">الأطفال</a></li>
+                <li><a href="./categories/new.html">الكوليكشن الجديد</a></li>
+                <li><a href="./categories/about.html">من نحن</a></li>
+                <li><a href="./categories/contact.html">تواصل معنا</a></li>
+                <input type="text" placeholder="ابحث عن عباية...">
+                <a href="./cart.html" class="cart-icon">🛒سلة الطلبات (<span id="cart-count">0</span>)</a>
+            </ul>
+        </nav>
+    <div class="cart-container">
+        <h1>سلة التسوق</h1>
+        <div class="cart-items" >
+            <!-- ستظهر المنتجات هنا عبر JavaScript -->
+        </div>
+        <div class="cart-summary">
+            <p>الإجمالي: <span id="total">0</span> جنيه</p>
+            <button id="checkout-btn">إتمام الشراء</button>
+        </div>
+    </div>
+    <div class="customer-info">
+        <input type="text" id="customer-name" placeholder="اسمك">
+        <input type="text" id="customer-address" placeholder="عنوانك">
+        <input type="number" id="customer-number"placeholder="رقم فونك ">
+    </div>
+    <button id="whatsapp-btn" class="whatsapp-btn">
+        <img src="./imgs/whatsapp_icon-icons.com_53606.png" alt="واتساب"> تأكيد الطلب عبر واتساب
+     </button>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

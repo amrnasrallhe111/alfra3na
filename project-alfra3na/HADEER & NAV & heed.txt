@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <title>الفراعنة ستورز - متجر العبايات</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styel.css">
+    <!-- ملف index.html في المجلد الرئيسي -->
+<nav>
+    <!-- <a href="./categories/women.html">الحريمي</a>  تذهب للمجلد الفرعي categories -->
+    <!-- <a href="./categories/kids.html">الأطفال</a> -->
+  </nav>
+</head>
+<body>
+    <header class="header">
+        <!-- اللوجو والعنوان -->
+        <div class="logo-container">
+            <img src="./imgs/logo.png" alt="لوجو الفراعنة ستورز" class="logo-img">
+            <h1 class="logo-text">الفراعنة <span>ستورز</span></h1>
+        </div>
+    
+        <!-- شريط التنقل الجديد -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="./categories/women.html">الحريمي</a></li>
+                <li><a href="./categories/kids.html">الأطفال</a></li>
+                <li><a href="./categories/new.html">الكوليكشن الجديد</a></li>
+                <li><a href="./categories/about.html">من نحن</a></li>
+                <li><a href="./categories/contact.html">تواصل معنا</a></li>
+                <input type="text" placeholder="ابحث عن عباية...">
+                <a href="./cart.html" class="cart-icon">🛒سلة الطلبات (<span id="cart-count">0</span>)</a>
+            </ul>
+        </nav>
+    
+        <!-- البحث والسلة -->
+        <div class="search-cart">
+
+            <!-- <button class="cart-btn">🛒 <span class="cart-counter">0</span></button> -->
+        </div>
+    </header>

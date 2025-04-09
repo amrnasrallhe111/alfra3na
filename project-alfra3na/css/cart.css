@@ -1,0 +1,155 @@
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cart-summary {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1.2em;
+}
+#checkout-btn {
+    background: #D4AF37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.whatsapp-btn img {
+    width: 24px;
+    height: 24px;
+}
+header {
+    background-color: #05082e;
+    color: #c99b03;
+    padding: 15px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* text-decoration: none; */
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    /* text-decoration: red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--gold);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.cart-icon {
+    background: var(--gold);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--black);
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+
+
+
+.main-nav {
+    background: #0a3d62;
+    padding: 0.5rem 1rem;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #e58e26;
+}
+.logo-img {
+    width: 100px;  /* اضبط حسب حجم الصورة */
+    height: auto;
+    border-radius: 50%;  /* إذا كنت تريدها دائرية */
+}
+.logo-text {
+    margin: 0;
+    color: #e58e26;
+    font-size: 1.5rem;
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تتبع طلبك - الفراعنة</title>
+    <link rel="stylesheet" href="../orders/order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="order-header">
+        <a href="../index.html" class="logo">الفراعنة</a>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="order-container">
+        <h1><i class="fas fa-truck"></i> تتبع طلبك</h1>
+        
+        <!-- حقل البحث -->
+        <div class="track-search">
+            <input type="text" id="order-number" placeholder="أدخل رقم الطلب">
+            <button id="track-btn">تتبع</button>
+        </div>
+
+        <!-- حالة الطلب -->
+        <div class="order-status" id="order-status">
+            <div class="status-progress">
+                <div class="step completed">
+                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                    <div class="step-text">
+                        <h3>تم استلام الطلب</h3>
+                        <p>25 مايو 2024 - 10:15 ص</p>
+                    </div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-tshirt"></i></div>
+                    <div class="step-text">
+                        <h3>قيد التجهيز</h3>
+                        <p>سيتم التوصيل خلال 24 ساعة</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-truck"></i></div>
+                    <div class="step-text">
+                        <h3>الشحن</h3>
+                        <p>رقم الشحنة: SF123456789</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-home"></i></div>
+                    <div class="step-text">
+                        <h3>التسليم</h3>
+                        <p>العنوان: القاهرة - مدينة نصر</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تفاصيل الطلب -->
+            <div class="order-details">
+                <h2>تفاصيل الطلب #ORD-2024-123</h2>
+                <div class="products-list">
+                    <div class="product-item">
+                        <img src="../images/women/abaya1.jpg" alt="عباية">
+                        <div class="product-info">
+                            <h3>عباية سوداء مطرزة</h3>
+                            <p>الكمية: 1</p>
+                            <p>المقاس: M</p>
+                            <p class="price">499 ج.م</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-summary">
+                    <h3>ملخص الطلب</h3>
+                    <div class="summary-row">
+                        <span>الإجمالي</span>
+                        <span>499 ج.م</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الشحن</span>
+                        <span>50 ج.م</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>المبلغ النهائي</span>
+                        <span>549 ج.م</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- التواصل -->
+        <div class="order-contact">
+            <h3>بحاجة إلى مساعدة؟</h3>
+            <a href="https://wa.me/20123456789" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> تواصل معنا عبر واتساب
+            </a>
+        </div>
+    </main>
+
+    <script src="../orders/order.js"></script>
+</body>
+</html>

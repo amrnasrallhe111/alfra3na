@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة المنتجات - المزاعنة ستورز</title>
+    <style>
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #8e44ad;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .file-upload {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .file-upload-label {
+            padding: 10px 15px;
+            background: #8e44ad;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .file-name {
+            color: #666;
+        }
+        button {
+            background: #8e44ad;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #7d3c98;
+        }
+        .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>إدارة المنتجات</h1>
+        
+        <div class="add-product-form">
+            <h2>إضافة منتج جديد</h2>
+            
+            <div class="form-group">
+                <label for="productName">اسم المنتج:</label>
+                <input type="text" id="productName" placeholder="أدخل اسم المنتج">
+            </div>
+            
+            <div class="form-group">
+                <label for="productPrice">سعر المنتج:</label>
+                <input type="number" id="productPrice" placeholder="أدخل السعر">
+            </div>
+            
+            <div class="form-group">
+                <label for="productCategory">القسم:</label>
+                <select id="productCategory">
+                    <option value="رجالي">رجالي</option>
+                    <option value="حريمي">حريمي</option>
+                    <option value="أطفال">أطفال</option>
+                    <option value="جديد">جديد</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>صورة المنتج:</label>
+                <div class="file-upload">
+                    <label for="productImage" class="file-upload-label">اختر صورة</label>
+                    <span id="fileName" class="file-name">لم يتم اختيار صورة</span>
+                    <input type="file" id="productImage" style="display: none;">
+                </div>
+            </div>
+            
+            <button onclick="addProduct()">حفظ المنتج</button>
+        </div>
+        <div class="products-list">
+            <h2>المنتجات المضافة</h2>
+            <div id="productsContainer" class="products-grid">
+              <!-- سيتم ملؤها بالمنتجات تلقائياً -->
+            </div>
+          </div>
+    </div>
+
+    <script>
+        // كود JavaScript هنا
+        document.getElementById('productImage').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'لم يتم اختيار صورة';
+            document.getElementById('fileName').textContent = fileName;
+        });
+
+        function addProduct() {
+            const name = document.getElementById('productName').value;
+            const price = document.getElementById('productPrice').value;
+            const category = document.getElementById('productCategory').value;
+            const imageFile = document.getElementById('productImage').files[0];
+            
+            if (!name || !price) {
+                alert("الرجاء إدخال اسم المنتج والسعر!");
+                return;
+            }
+            
+            // هنا سيتم إضافة كود Firebase لحفظ المنتج
+            alert("تم حفظ المنتج بنجاح!\n" + 
+                  "الاسم: " + name + "\n" +
+                  "السعر: " + price + " ج.م\n" +
+                  "القسم: " + category);
+            
+            // مسح الحقول بعد الحفظ
+            document.getElementById('productName').value = "";
+            document.getElementById('productPrice').value = "";
+            document.getElementById('productImage').value = "";
+            document.getElementById('fileName').textContent = "لم يتم اختيار صورة";
+        }
+        // دالة لتحميل وعرض المنتجات
+function loadProducts() {
+  db.collection("products").orderBy("createdAt", "desc").onSnapshot(snapshot => {
+    const productsContainer = document.getElementById('productsContainer');
+    productsContainer.innerHTML = "";
+    
+    snapshot.forEach(doc => {
+      const product = doc.data();
+      productsContainer.innerHTML += `
+        <div class="product-item">
+          <img src="${product.image}" width="100">
+          <h3>${product.name}</h3>
+          <p>${product.price}</p>
+          <p>${product.category}</p>
+          <button onclick="deleteProduct('${doc.id}', '${product.image}')">حذف</button>
+        </div>
+      `;
+    });
+  });
+}
+
+// استدعاء الدالة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', loadProducts);
+async function deleteProduct(productId, imageUrl) {
+  if (!confirm("هل أنت متأكد من حذف هذا المنتج؟")) return;
+  
+  try {
+    // حذف الصورة من Storage إذا وجدت
+    if (imageUrl && !imageUrl.includes("default.jpg")) {
+      const imageRef = storage.refFromURL(imageUrl);
+      await imageRef.delete();
+    }
+    
+    // حذف المنتج من Firestore
+    await db.collection("products").doc(productId).delete();
+    alert("تم الحذف بنجاح");
+  } catch (error) {
+    console.error("Error deleting product: ", error);
+    alert("حدث خطأ أثناء الحذف: " + error.message);
+  }
+}
+    </script>
+</body>
+</html>
