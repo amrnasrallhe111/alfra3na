@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفراعنة  ستورز متجر  </title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <header class="main-header">
+        <div class="header-container">
+            <button class="toggle-sidebar" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo-container">
+              <img src="./imgs/logo.png" alt="لوجو الفراعنة ستورز" class="logo-img">
+          </div>
+            <a href="./index.html" class="logo">الفراعنة ستورز</a>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder=" ابحث عن منتج في الفراعنة ستورز ...">
+                <button onclick="performSearch()">بحث</button>
+            </div>
+            
+            <!-- قسم عرض النتائج -->
+            <div id="searchResults" class="results-container"></div>
+            <div class="header-icons">
+                <!-- <a href="#" class="search-icon"><i class="fas fa-search"></i></a> -->
+                <a href="cart.html" class="cart-icon">🛒 <span class="cart-count">0</span></a>
+            </div>
+          </div>
+    </header>
+
+    <!-- القائمة الجانبية -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-list-ul"></i> تصفح الأقسام</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="./categories/women.html" class="menu-title">
+                    <i class="fas fa-female"></i> العبايات الحريمي
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="./categories/kids.html" class="menu-title">
+                    <i class="fas fa-child"></i> عبايات الأطفال
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="./categories/new.html" class="menu-title">
+                    <i class="fas fa-star"></i> الكوليكشن الجديد
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="./categories/new.html" class="menu-title">
+                    <i class="fas fa-fire"></i> العروض الخاصة
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="./categories/women.html" class="menu-title">
+                    <i class="fas fa-gem"></i> العبايات الفاخرة
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="#" class="menu-title">
+                    <i class="fas fa-snowflake"></i>  الكاجوال الحريمي 
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="./categories/men.html" class="menu-title">
+                    <i class="fas fa-sun"></i>  ركن الرجالي 
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <a href="./categories/about.html" class="footer-link">
+                <i class="fas fa-info-circle"></i> من نحن
+            </a>
+            <a href="./categories/contact.html" class="footer-link">
+                <i class="fas fa-phone-alt"></i> اتصل بنا
+            </a>
+        </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content" id="mainContent">
+        <!-- بانر رئيسي -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h1>أجمل تشكيلة عبايات 2025</h1>
+                <p>تصاميم حصرية تناسب كل الأذواق</p>
+                <a href="./categories/new.html" class="cta-button">اكتشف المجموعة الجديدة</a>
+            </div>
+        </section>
+        
+        <!-- قسم العروض الخاصة -->
+        <section class="special-offers">
+            <div class="section-header">
+                <h2><i class="fas fa-tag"></i> العروض الخاصة</h2>
+                <a href="./categories/new.html" class="view-all">عرض الكل <i class="fas fa-chevron-left"></i></a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- المنتج 1 -->
+                <div class="product-card">
+                    <div class="product-badge">خصم 20%</div>
+                    <div class="product-image">
+                        <img src="./imgs/15.jpg" alt="عباية سوداء مطرزة">
+                    </div>
+                    <div class="product-info">
+                        <h3>عباية سوداء مطرزة</h3>
+                        <div class="price">
+                            <span class="current-price">399 ج.م</span>
+                            <span class="old-price">499 ج.م</span>
+                        </div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+                
+                <!-- المنتج 2 -->
+                <div class="product-card">
+                    <div class="product-badge">جديد</div>
+                    <div class="product-image">
+                        <img src="./imgs/488.jpg" alt="عباية كحلي مزينة">
+                    </div>
+                    <div class="product-info">
+                        <h3>عباية كحلي مزينة</h3>
+                        <div class="price">
+                            <span class="current-price">449 ج.م</span>
+                        </div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+                
+                <!-- المنتج 3 -->
+                <div class="product-card">
+                    <div class="product-badge">الأكثر مبيعًا</div>
+                    <div class="product-image">
+                        <img src="./imgs/15.jpg" alt="عباية وردية">
+                    </div>
+                    <div class="product-info">
+                        <h3>عباية وردية بتفاصيل ذهبية</h3>
+                        <div class="price">
+                            <span class="current-price">549 ج.م</span>
+                        </div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- قسم الفئات -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2><i class="fas fa-th-large"></i> تصفح حسب الفئة</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="./categories/women.html" class="category-card">
+                    <img src="./imgs/4.jpg" alt="عبايات حريمي">
+                    <div class="category-overlay">
+                        <h3>عبايات حريمي</h3>
+                    </div>
+                </a>
+                
+                <a href="./categories/kids.html" class="category-card">
+                    <img src="./imgs/kids.jpg" alt="عبايات أطفال">
+                    <div class="category-overlay">
+                        <h3>عبايات أطفال</h3>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <img src="./imgs/555.jpg" alt="عبايات صيفية">
+                    <div class="category-overlay">
+                        <h3>عبايات صيفية</h3>
+                    </div>
+                </a>
+                <a href="./categories/men.html" class="category-card">
+                    <img src="./imgs/jjjjjjj5.jpg" alt="ملابس رجالي ">
+                    <div class="category-overlay">
+                        <h3> ملابس رجالي</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- قسم المميزات -->
+        <section class="features-section">
+            <div class="feature-card">
+                <i class="fas fa-truck"></i>
+                <h3>شحن سريع</h3>
+                <p>توصيل خلال 24-48 ساعة</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>إرجاع سهل</h3>
+                <p>إمكانية الإرجاع خلال 14 يوم</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>دفع آمن</h3>
+                <p>طرق دفع متعددة وآمنة</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>دعم فني</h3>
+                <p>خدمة عملاء 24 ساعة</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>الفراعنة ستورز</h3>
+                <p>متجر متخصص في بيع أجود أنواع العبايات الحريمي والأطفال بأحدث التصاميم والألوان.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="./index.html">الرئيسية</a></li>
+                    <li><a href="./categories/about.html">من نحن</a></li>
+                    <li><a href="./categories/contact.html">اتصل بنا</a></li>
+                    <li><a href="./Privacy Policy.pdf">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 01554889377</li>
+                    <li><i class="fas fa-envelope"></i> info@alfra3na.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61574955834859&locale=ar_AR"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/amr_nasrallhe/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wsend.co/201554889377"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 الفراعنة ستورز. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script src="./js/mnia.js"></script>
+</body>
+</html>
